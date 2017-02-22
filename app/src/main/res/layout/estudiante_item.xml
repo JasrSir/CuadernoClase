@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/estudiante_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        app:cardElevation="5dp"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:text="id"
+                android:layout_margin="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvIdAlum" />
+            <TextView
+                android:text="nombre"
+                android:layout_margin="10sp"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/txvIdAlum"
+                android:textStyle="bold|italic"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvNombreApellAlum" />
+            <TextView
+                android:text="dire3ccion"
+                android:layout_margin="10sp"
+                android:textSize="20sp"
+
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/txvNombreApellAlum"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvDireccionAlum" />
+
+            <TextView
+                android:text="ciudad"
+                android:layout_margin="10sp"
+                android:textSize="20sp"
+
+                android:layout_toRightOf="@+id/txvDireccionAlum"
+                android:layout_alignBaseline="@+id/txvDireccionAlum"
+                android:layout_width="match_parent"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvCiudadAlum" />
+            <TextView
+                android:text="codPos"
+                android:layout_marginLeft="10sp"
+                android:textSize="20sp"
+
+                android:layout_below="@+id/txvDireccionAlum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvCodPosAlum" />
+            <TextView
+                android:text="telefib"
+                android:layout_margin="10sp"
+                android:textSize="20sp"
+
+                android:layout_toRightOf="@+id/txvCodPosAlum"
+                android:gravity="right"
+                android:layout_alignBaseline="@+id/txvCodPosAlum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txvTelefonoAlum" />
+            <TextView
+                android:text="mail"
+                android:layout_margin="10sp"
+                android:layout_below="@+id/txvCodPosAlum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+
+                android:gravity="right"
+                android:id="@+id/txvEmailAlum" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

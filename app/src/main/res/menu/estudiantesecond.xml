@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Borrar Estudiante"
+        android:id="@+id/deleteEstudiante"
+        app:showAsAction="ifRoom"
+        android:visible="true" />
+    <item android:title="Modificar Esudiante"
+        android:id="@+id/updateEstudiante"
+        app:showAsAction="ifRoom"
+        android:visible="true" />
+    <item android:title="Mandar Email"
+        android:id="@+id/emailEstudiante"
+        app:showAsAction="ifRoom"
+        android:visible="true" />
+
+</menu>
