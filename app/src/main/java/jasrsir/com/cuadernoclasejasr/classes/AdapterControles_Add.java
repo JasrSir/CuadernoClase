@@ -5,9 +5,7 @@ import android.content.DialogInterface;
 import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -95,15 +93,11 @@ public class AdapterControles_Add extends ArrayAdapter {
         holder.id.setText(String.valueOf(((Estudiante)getItem(position)).getId()));
         holder.nombreEst.setText(((Estudiante)getItem(position)).getNombre() +" " + ((Estudiante)getItem(position)).getApellidos() );
 
-        holder.faltaimg.setO(new PopupMenu.OnMenuItemClickListener() {
+        holder.faltaimg.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return false;
+            public void onClick(View v) {
+                popupu(1);
             }
-        })
-
-
-
 
             private void popupu(int i) {
                 holder.dialog = new AlertDialog.Builder(context)
@@ -126,7 +120,7 @@ public class AdapterControles_Add extends ArrayAdapter {
 
                 holder.dialog.show();
             }
-
+        });
         holder.trabajoimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
