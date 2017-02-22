@@ -129,9 +129,20 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:editable="true"
+                android:enabled="true"
                 android:ems="10"
                 android:id="@+id/hedtObservacion" />
 
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Enviar Control"
+                android:layout_gravity="bottom|end"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                android:layout_margin="6dp"
+                android:id="@+id/fabControlAdd" />
         </LinearLayout>
 
 

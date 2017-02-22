@@ -23,9 +23,9 @@ public class Control {
     private String actitud;
     private String trabajo;
     private String observacion;
-    private Date fecha;
+    private String fecha;
 
-    public Control(int idEstudiante, String falta, String actitud,String trabajo, String observacion, Date fecha) {
+    public Control(int idEstudiante, String falta, String actitud,String trabajo, String observacion, String fecha) {
         this.idEstudiante = idEstudiante;
         this.falta = falta;
         this.actitud = actitud;
@@ -35,6 +35,12 @@ public class Control {
     }
 
     public Control() {
+        this.idEstudiante = 0;
+        this.falta = null;
+        this.actitud = null;
+        this.trabajo = null;
+        this.observacion = null;
+        this.fecha = null;
     }
 
     public String getTrabajo() {
@@ -77,11 +83,11 @@ public class Control {
         this.observacion = observacion;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import jasrsir.com.cuadernoclasejasr.R;
 
@@ -35,6 +36,7 @@ public class AdapterControles extends ArrayAdapter {
     public static final String FALT_INJUS = "injustificada";
     public static final String FALT_JUS = "justificada";
     public static final String FALT_RETRA = "retraso";
+    SimpleDateFormat smf = new SimpleDateFormat("yyyy-MM-dd");
     private Context context;
     private CardViewHolder holder;
 
@@ -101,7 +103,7 @@ public class AdapterControles extends ArrayAdapter {
                 break;
 
         }
-        holder.fecha.setText(new SimpleDateFormat().format(((Control)getItem(position)).getFecha()));
+        holder.fecha.setText(((Control)getItem(position)).getFecha());
         holder.observaciones.setText(((Control)getItem(position)).getObservacion());
         holder.observaciones.setEnabled(false);
         return rootview;
