@@ -53,7 +53,7 @@ public class CreatModifEstud_Activity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.edtEmailEst);
         aceptar = (Button) findViewById(R.id.accept);
         cancel = (Button) findViewById(R.id.cancel);
-        if ((estudiante = (Estudiante) getIntent().getSerializableExtra("estudiante")) != null) {
+        if ((estudiante = getIntent().getParcelableExtra("estudiante")) != null) {
             setEstudiante(estudiante);
             hayEstudiante = true;
         }

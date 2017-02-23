@@ -157,7 +157,7 @@ public class ActivityPrincipal extends AppCompatActivity  {
                         delete(mListAdapter.getAt(position));
                         return true;
                     case R.id.emailEstudiante:
-                        //confirm(mListAdapter.getAt(position).getId(), mListAdapter.getAt(position).getNombre(), position);
+                        email(mListAdapter.getAt(position));
                         return true;
                     default:
                         return false;
@@ -166,6 +166,12 @@ public class ActivityPrincipal extends AppCompatActivity  {
         });
         // Show the menu
         popup.show();
+    }
+
+    private void email(Estudiante at) {
+        Intent i = new Intent(this, EmailActivity.class);
+        i.putExtra("estudiante", at);
+        startActivity(i);
     }
 
     private void modify(Estudiante s) {

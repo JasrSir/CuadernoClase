@@ -114,6 +114,7 @@ public class AdapterControles_Add extends ArrayAdapter {
         holder.id.setText(String.valueOf(((Estudiante)getItem(position)).getId()));
         holder.nombreEst.setText(((Estudiante)getItem(position)).getNombre() +" " + ((Estudiante)getItem(position)).getApellidos() );
         final CardViewHolder holderf = holder;
+        holder.observaciones.requestFocus();
         holder.fabControlAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,10 +163,10 @@ public class AdapterControles_Add extends ArrayAdapter {
                                 remove(item);
                                 notifyDataSetChanged();
                             } else
-                                message = "Error enviando control:\n" + result.getMsgError();
+                                message = "Error: YA HAY UN CONTROL DEL ALUMNO";
                         else
                             message = "Null data";
-                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                     }
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
@@ -194,11 +195,17 @@ public class AdapterControles_Add extends ArrayAdapter {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 holderf.falta.setText(FALTAS[i]);
                                 holderf.faltaimg.setImageResource(IMG_FALTAS[i]);
-                                holderf.dialog.closeOptionsMenu();
                                 notifyDataSetChanged();
 
                             }
-                        }).setTitle("Elige el tipo de falta").create();
+                        }).setTitle("Elige el tipo de falta")
+                        .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                holderf.dialog.closeOptionsMenu();
+
+                            }
+                        }).create();
 
                 holderf.dialog.show();
             }
@@ -216,11 +223,17 @@ public class AdapterControles_Add extends ArrayAdapter {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 holderf.trabajo.setText(TRABAJO[i]);
                                 holderf.trabajoimg.setImageResource(IMG_TRABAJO[i]);
-                                holderf.dialog.closeOptionsMenu();
                                 notifyDataSetChanged();
 
                             }
-                        }).setTitle("¿Cómo ha trabajado el alumno?").create();
+                        }).setTitle("¿Cómo ha trabajado el alumno?")
+                        .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                holderf.dialog.closeOptionsMenu();
+
+                            }
+                        }).create();
                 holderf.dialog.show();
             }
         });
@@ -237,30 +250,21 @@ public class AdapterControles_Add extends ArrayAdapter {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 holderf.actitud.setText(ACTITUD[i]);
                                 holderf.actitudimg.setImageResource(IMG_ACTITUD[i]);
-                                holderf.dialog.closeOptionsMenu();
                                 notifyDataSetChanged();
 
                             }
-                        }).setTitle("¿Cómo es su actitud?").create();
+                        }).setTitle("¿Cómo es su actitud?")
+                        .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                holderf.dialog.closeOptionsMenu();
+
+                            }
+                        }).create();
                 holderf.dialog.show();
             }
         });
-        holder.observaciones.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                holderf.observaciones.setText(s);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
         return rootview;
     }
 

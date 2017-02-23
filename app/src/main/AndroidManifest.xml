@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".CreatModifEstud_Activity" />
         <activity android:name=".FaltasHoy" />
-        <activity android:name=".ControlEstudianteActivity"></activity>
+        <activity android:name=".ControlEstudianteActivity" />
+        <activity android:name=".EmailActivity"></activity>
     </application>
 
 </manifest>

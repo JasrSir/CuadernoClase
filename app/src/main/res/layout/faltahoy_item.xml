@@ -130,6 +130,7 @@
                 android:inputType="textMultiLine"
                 android:editable="true"
                 android:enabled="true"
+                android:text=""
                 android:ems="10"
                 android:id="@+id/hedtObservacion" />
 
