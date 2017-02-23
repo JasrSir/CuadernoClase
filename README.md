@@ -1,29 +1,27 @@
-# README #
+# Ejercicio CUADERNO DE CLASE #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Ejercicio Cuaderno de clase de Juan Antonio Suarez Rosa
 
-### What is this repository for? ###
+### Contenido del ejercicio ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Este ejercicio realiza las siguientes operaciones
 
-### How do I get set up? ###
+1. Muestra una lista con los estudiantes que posee el profesor, pudiendo crear estudiantes, modificarlos y borrarlos a través de las diferentes acciones con la (FAB add, LongClick)
+2. Posibilidad de enviar un email al alumno correspondiente.
+3. Posibilidad de añadir faltas a los alumnos y enviarlas por separado al servidor. Una vez realizado se elimina la falta de la lista.
+4. Posibilidad de visualizar todos los controles que tiene cada alumno con un click en el alumno.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
-### Contribution guidelines ###
+### Mejora del ejercicio ###
+* Material Design añadido
+* Se muestran tarjetas e iconos para hacer más representativas las faltas de los alumnos.
 
-* Writing tests
-* Code review
-* Other guidelines
+***Activity CREATE / MODIFY estudiante**
 
-### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+***Activity ALL CONTROLS (1 estudiante)**
+
+***Activity SEND MAIL**
+
+
+***Activity ADD CONTROL**
