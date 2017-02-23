@@ -19,7 +19,7 @@ import jasrsir.com.cuadernoclasejasr.classes.Estudiante;
 public class FaltasHoy extends AppCompatActivity {
     ArrayList<Estudiante> estudiantes;
     private AdapterControles_Add mAdapterontroles;
-    private FloatingActionButton aniadir;
+    //private FloatingActionButton aniadir;
     private ListView mListFaltas;
     private Toolbar mtoolbar;
     @Override
@@ -27,21 +27,21 @@ public class FaltasHoy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faltas_hoy);
         estudiantes =  getIntent().getParcelableArrayListExtra("estudiantes");
-        mAdapterontroles = new AdapterControles_Add(this,estudiantes);
+        mAdapterontroles = new AdapterControles_Add(this);
         SimpleDateFormat smf = new SimpleDateFormat("yyyy-MM-dd");
-        aniadir = (FloatingActionButton) findViewById(R.id.fabaddcontrol);
+        //aniadir = (FloatingActionButton) findViewById(R.id.fabaddcontrol);
         mtoolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(mtoolbar);
         getSupportActionBar().setTitle("Faltas del "+ smf.format(new Date()));
         mListFaltas = (ListView) findViewById(R.id.listCOntrols);
 
         mListFaltas.setAdapter(mAdapterontroles);
-
-        aniadir.setOnClickListener(new View.OnClickListener() {
+/*
+        //aniadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mAdapterontroles.createControl();
             }
-        });
+        });*/
     }
 }

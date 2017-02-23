@@ -25,7 +25,7 @@ import jasrsir.com.cuadernoclasejasr.R;
  */
 public class AdapterEstudiantes extends ArrayAdapter {
 
-    private ArrayList<Estudiante> estudiantesList;
+    public static ArrayList<Estudiante> estudiantesList;
     private Context context;
     private CardViewHolder holder;
 
