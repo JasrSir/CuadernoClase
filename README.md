@@ -11,6 +11,8 @@ Ejercicio Cuaderno de clase de Juan Antonio Suarez Rosa
 3. Posibilidad de añadir faltas a los alumnos y enviarlas por separado al servidor. Una vez realizado se elimina la falta de la lista.
 4. Posibilidad de visualizar todos los controles que tiene cada alumno con un click en el alumno.
 
+### Funcionamiento del ejercicio ###
+* Se utiliza REST Client para todas las acciones descritas en el ejercicio y las respuestas se transforma en objetos para su uso.
 
 ### Mejora del ejercicio ###
 * Material Design añadido
