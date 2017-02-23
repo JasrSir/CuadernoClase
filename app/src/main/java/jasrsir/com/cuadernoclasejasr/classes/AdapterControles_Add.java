@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -84,15 +85,17 @@ public class AdapterControles_Add extends ArrayAdapter {
         ImageView actitudimg;
         Button fabControlAdd;
         EditText observaciones;
+
     }
 
     @NonNull
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, final ViewGroup parent) {
         View rootview = convertView;
         CardViewHolder holder = new CardViewHolder();
 
         if (rootview == null){
+
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rootview = inflater.inflate(R.layout.faltahoy_item, parent, false);
             holder.id = (TextView) rootview.findViewById(R.id.htxvIDALUMNO);
@@ -114,11 +117,64 @@ public class AdapterControles_Add extends ArrayAdapter {
         holder.id.setText(String.valueOf(((Estudiante)getItem(position)).getId()));
         holder.nombreEst.setText(((Estudiante)getItem(position)).getNombre() +" " + ((Estudiante)getItem(position)).getApellidos() );
         final CardViewHolder holderf = holder;
+
+        Estudiante estudiante = (Estudiante)getItem(position);
+        switch (estudiante.getFaltasB()) {
+            case 0:
+                holderf.falta.setText(FALTAS[0]);
+                holderf.faltaimg.setImageResource(IMG_FALTAS[0]);
+                break;
+            case 1:
+                holderf.falta.setText(FALTAS[1]);
+                holderf.faltaimg.setImageResource(IMG_FALTAS[1]);
+                break;
+            case 2:
+                holderf.falta.setText(FALTAS[2]);
+                holderf.faltaimg.setImageResource(IMG_FALTAS[2]);
+                break;
+            default:
+                break;
+        }
+        switch (estudiante.getTrabajoB()) {
+            case 0:
+                holderf.trabajo.setText(TRABAJO[0]);
+                holderf.trabajoimg.setImageResource(IMG_TRABAJO[0]);
+                break;
+            case 1:
+                holderf.trabajo.setText(TRABAJO[1]);
+                holderf.trabajoimg.setImageResource(IMG_TRABAJO[1]);
+                break;
+            case 2:
+                holderf.trabajo.setText(TRABAJO[2]);
+                holderf.trabajoimg.setImageResource(IMG_TRABAJO[2]);
+                break;
+            default:
+                break;
+
+        }
+        switch (estudiante.getActitudB()) {
+            case 0:
+                holderf.actitud.setText(ACTITUD[0]);
+                holderf.actitudimg.setImageResource(IMG_ACTITUD[0]);
+                break;
+            case 1:
+                holderf.actitud.setText(ACTITUD[1]);
+                holderf.actitudimg.setImageResource(IMG_ACTITUD[1]);
+                break;
+            default:
+                break;
+
+        }
+
         holder.observaciones.requestFocus();
         holder.fabControlAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 guardar(getItem(position));
+                //remove(getView(position,convertView,parent));
+                remove(getItem(position));
+                notifyDataSetChanged();
+
             }
 
             private void guardar(final Object item) {
@@ -160,8 +216,7 @@ public class AdapterControles_Add extends ArrayAdapter {
                         if (result != null)
                             if (result.getEstado()) {
                                 message = "Control ADJUDICADO";
-                                remove(item);
-                                notifyDataSetChanged();
+
                             } else
                                 message = "Error: YA HAY UN CONTROL DEL ALUMNO";
                         else
@@ -193,6 +248,7 @@ public class AdapterControles_Add extends ArrayAdapter {
                         .setSingleChoiceItems(FALTAS, 0, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                ((Estudiante) getItem(position)).setFaltasB(i);
                                 holderf.falta.setText(FALTAS[i]);
                                 holderf.faltaimg.setImageResource(IMG_FALTAS[i]);
                                 notifyDataSetChanged();
@@ -221,6 +277,7 @@ public class AdapterControles_Add extends ArrayAdapter {
                         .setSingleChoiceItems(TRABAJO, 0, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                ((Estudiante) getItem(position)).setTrabajoB(i);
                                 holderf.trabajo.setText(TRABAJO[i]);
                                 holderf.trabajoimg.setImageResource(IMG_TRABAJO[i]);
                                 notifyDataSetChanged();
@@ -248,6 +305,7 @@ public class AdapterControles_Add extends ArrayAdapter {
                         .setSingleChoiceItems(ACTITUD, 0, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                ((Estudiante) getItem(position)).setActitudB(i);
                                 holderf.actitud.setText(ACTITUD[i]);
                                 holderf.actitudimg.setImageResource(IMG_ACTITUD[i]);
                                 notifyDataSetChanged();
@@ -268,22 +326,6 @@ public class AdapterControles_Add extends ArrayAdapter {
         return rootview;
     }
 
-    public void popup(int caso) {
-
-        switch (caso) {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-        }
-
-
-    }
 
     public void start(ArrayList<Control> controlArrayList) {
         clear();
