@@ -16,12 +16,18 @@ Ejercicio Cuaderno de clase de Juan Antonio Suarez Rosa
 * Material Design añadido
 * Se muestran tarjetas e iconos para hacer más representativas las faltas de los alumnos.
 
-***Activity CREATE / MODIFY estudiante**
 
+***Activity LISTA ESTUDIANTES**
+![Screenshot_1487844626.png](https://bitbucket.org/repo/rxEn9a/images/2156730878-Screenshot_1487844626.png)
+
+***Activity CREATE / MODIFY estudiante**
+![Screenshot_1487844653.png](https://bitbucket.org/repo/rxEn9a/images/1978656314-Screenshot_1487844653.png)
 
 ***Activity ALL CONTROLS (1 estudiante)**
+![Screenshot_1487844840.png](https://bitbucket.org/repo/rxEn9a/images/166699077-Screenshot_1487844840.png)
+
+***Activity ADD CONTROLS **
+![Screenshot_1487844637.png](https://bitbucket.org/repo/rxEn9a/images/188110759-Screenshot_1487844637.png)
 
 ***Activity SEND MAIL**
-
-
-***Activity ADD CONTROL**
+![Screenshot_1487844646.png](https://bitbucket.org/repo/rxEn9a/images/4121956146-Screenshot_1487844646.png)
