@@ -90,11 +90,11 @@ public class AdapterControles_Add extends ArrayAdapter {
 
     @NonNull
     @Override
-    public View getView(final int position, final View convertView, final ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         View rootview = convertView;
         CardViewHolder holder = new CardViewHolder();
 
-        if (rootview == null){
+       // if (rootview == null){
 
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rootview = inflater.inflate(R.layout.faltahoy_item, parent, false);
@@ -110,15 +110,15 @@ public class AdapterControles_Add extends ArrayAdapter {
             holder.observaciones = (EditText) rootview.findViewById(R.id.hedtObservacion);
             holder.observaciones.setEnabled(true);
 
-            rootview.setTag(holder);
-        } else{
-            holder = (CardViewHolder) rootview.getTag();
-        }
+        //    rootview.setTag(holder);
+       // } else{
+         //   holder = (CardViewHolder) rootview.getTag();
+       // }
         holder.id.setText(String.valueOf(((Estudiante)getItem(position)).getId()));
         holder.nombreEst.setText(((Estudiante)getItem(position)).getNombre() +" " + ((Estudiante)getItem(position)).getApellidos() );
         final CardViewHolder holderf = holder;
 
-        Estudiante estudiante = (Estudiante)getItem(position);
+        final Estudiante estudiante = (Estudiante)getItem(position);
         switch (estudiante.getFaltasB()) {
             case 0:
                 holderf.falta.setText(FALTAS[0]);
@@ -167,6 +167,26 @@ public class AdapterControles_Add extends ArrayAdapter {
         }
 
         holder.observaciones.requestFocus();
+        if (!estudiante.getControl().getObservacion().isEmpty()) {
+            holderf.observaciones.setText(estudiante.getControl().getObservacion());
+        }
+
+        holder.observaciones.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            estudiante.getControl().setObservacion(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         holder.fabControlAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -240,12 +260,12 @@ public class AdapterControles_Add extends ArrayAdapter {
         holder.faltaimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupu(1);
+                popupu();
             }
 
-            private void popupu(int i) {
+            private void popupu() {
                 holderf.dialog = new AlertDialog.Builder(context)
-                        .setSingleChoiceItems(FALTAS, 0, new DialogInterface.OnClickListener() {
+                        .setSingleChoiceItems(FALTAS,7 ,new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 ((Estudiante) getItem(position)).setFaltasB(i);
@@ -269,12 +289,12 @@ public class AdapterControles_Add extends ArrayAdapter {
         holder.trabajoimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupu(2);
+                popupu();
             }
 
-            private void popupu(int i) {
+            private void popupu() {
                 holderf.dialog = new AlertDialog.Builder(context)
-                        .setSingleChoiceItems(TRABAJO, 0, new DialogInterface.OnClickListener() {
+                        .setSingleChoiceItems(TRABAJO, 7, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 ((Estudiante) getItem(position)).setTrabajoB(i);
@@ -302,7 +322,7 @@ public class AdapterControles_Add extends ArrayAdapter {
 
             private void popupu() {
                 holderf.dialog = new AlertDialog.Builder(context)
-                        .setSingleChoiceItems(ACTITUD, 0, new DialogInterface.OnClickListener() {
+                        .setSingleChoiceItems(ACTITUD, 7, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 ((Estudiante) getItem(position)).setActitudB(i);

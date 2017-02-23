@@ -18,6 +18,7 @@ public class Estudiante implements Parcelable {
     private String codigoPos;
     private String telefono;
     private String email;
+    private Control control;
     private int id;
     private int faltasB;
     private int actitudB;
@@ -26,6 +27,7 @@ public class Estudiante implements Parcelable {
         this.trabajoB = 5;
         this.actitudB = 5;
         this.faltasB = 5;
+        this.control = new Control();
     }
 
     public Estudiante(int id, String nombre, String apellidos, String direccion, String ciudad, String codigoPos, String telefono, String email) {
@@ -53,6 +55,14 @@ public class Estudiante implements Parcelable {
         this.actitudB = 5;
         this.faltasB = 5;
         this.id = 0;
+    }
+
+    public Control getControl() {
+        return control;
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
     }
 
     public int getId() {
@@ -159,6 +169,7 @@ public class Estudiante implements Parcelable {
         dest.writeString(this.codigoPos);
         dest.writeString(this.telefono);
         dest.writeString(this.email);
+        dest.writeParcelable(this.control, flags);
         dest.writeInt(this.id);
         dest.writeInt(this.faltasB);
         dest.writeInt(this.actitudB);
@@ -173,6 +184,7 @@ public class Estudiante implements Parcelable {
         this.codigoPos = in.readString();
         this.telefono = in.readString();
         this.email = in.readString();
+        this.control = in.readParcelable(Control.class.getClassLoader());
         this.id = in.readInt();
         this.faltasB = in.readInt();
         this.actitudB = in.readInt();

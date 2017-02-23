@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_margin="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,7 +9,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         app:cardElevation="5dp"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_margin="8sp"
         android:layout_height="wrap_content" >
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +24,6 @@
                 android:id="@+id/htxvIDALUMNO" />
             <TextView
                 android:text="NOMBREALUMNO"
-                android:layout_margin="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="20dp"
@@ -34,11 +33,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:orientation="horizontal">
                 <TextView
                     android:text="FALTA"
-                    android:layout_weight="1"
+                    android:layout_weight="1.3"
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,21 +91,21 @@
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@mipmap/ic_touch"
                     android:id="@+id/himgFalta" />
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@mipmap/ic_touch"
                     android:id="@+id/himgTrabajo" />
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@mipmap/ic_touch"
@@ -116,10 +114,9 @@
             </LinearLayout>
             <TextView
                 android:text="OBSERVACION"
-                android:layout_margin="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txvObsee" />
 
@@ -136,13 +133,12 @@
 
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:text="Enviar Control"
                 android:layout_gravity="bottom|end"
                 app:srcCompat="@android:drawable/ic_menu_add"
-                android:layout_margin="6dp"
                 android:id="@+id/fabControlAdd" />
         </LinearLayout>
 

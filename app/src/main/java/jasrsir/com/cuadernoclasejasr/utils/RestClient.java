@@ -13,34 +13,39 @@ import com.loopj.android.http.RequestParams;
 public class RestClient {
     //private static final String BASE_URL = "http://192.168.1.100/";
     private static final String BASE_URL = "https://juanantonio.alumno.club/";
-    private static final String API_KEY = "alumnosCabreados";
+    private static final String API_KEY = "ClaveSecretaProfe12345678";
 
     private static final int MAX_TIMEOUT = 10000;
     private static final int RETRIES = 3;
     private static final int TIMEOUT_BETWEEN_RETRIES = 5000;
+
     private static AsyncHttpClient client = new AsyncHttpClient(true, 80, 443);
     public static void get(String url, AsyncHttpResponseHandler responseHandler) {
-        //client.setUserAgent(API_KEY);
+        client.addHeader("apikey",API_KEY);
         client.setTimeout(MAX_TIMEOUT);
         client.setMaxRetriesAndTimeout(RETRIES, TIMEOUT_BETWEEN_RETRIES);
         client.get(getAbsoluteUrl(url), responseHandler);
     }
     public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.addHeader("apikey",API_KEY);
         client.setTimeout(MAX_TIMEOUT);
         client.setMaxRetriesAndTimeout(RETRIES, TIMEOUT_BETWEEN_RETRIES);
         client.get(getAbsoluteUrl(url), params, responseHandler);
     }
     public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.addHeader("apikey",API_KEY);
         client.setTimeout(MAX_TIMEOUT);
         client.setMaxRetriesAndTimeout(RETRIES, TIMEOUT_BETWEEN_RETRIES);
         client.post(getAbsoluteUrl(url), params, responseHandler);
     }
     public static void put(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.addHeader("apikey",API_KEY);
         client.setTimeout(MAX_TIMEOUT);
         client.setMaxRetriesAndTimeout(RETRIES, TIMEOUT_BETWEEN_RETRIES);
         client.put(getAbsoluteUrl(url), params, responseHandler);
     }
     public static void delete(String url, AsyncHttpResponseHandler responseHandler) {
+        client.addHeader("apikey",API_KEY);
         client.setTimeout(MAX_TIMEOUT);
         client.setMaxRetriesAndTimeout(RETRIES, TIMEOUT_BETWEEN_RETRIES);
         client.delete(getAbsoluteUrl(url), responseHandler);
