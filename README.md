@@ -20,16 +20,21 @@ Ejercicio Cuaderno de clase de Juan Antonio Suarez Rosa
 
 
 ***Activity LISTA ESTUDIANTES**
-![Screenshot_1487844626.png](https://bitbucket.org/repo/rxEn9a/images/2156730878-Screenshot_1487844626.png)
+
+![Screenshot_1487882633.png](https://bitbucket.org/repo/rxEn9a/images/1957738943-Screenshot_1487882633.png)
 
 ***Activity CREATE / MODIFY estudiante**
-![Screenshot_1487844653.png](https://bitbucket.org/repo/rxEn9a/images/1978656314-Screenshot_1487844653.png)
+
+![Screenshot_1487882641.png](https://bitbucket.org/repo/rxEn9a/images/1023927454-Screenshot_1487882641.png)
 
 ***Activity ALL CONTROLS (1 estudiante)**
-![Screenshot_1487844840.png](https://bitbucket.org/repo/rxEn9a/images/166699077-Screenshot_1487844840.png)
+
+![Screenshot_1487882673.png](https://bitbucket.org/repo/rxEn9a/images/4183994299-Screenshot_1487882673.png)
 
 ***Activity ADD CONTROLS **
-![Screenshot_1487844637.png](https://bitbucket.org/repo/rxEn9a/images/188110759-Screenshot_1487844637.png)
+
+![Screenshot_1487882656.png](https://bitbucket.org/repo/rxEn9a/images/1037471025-Screenshot_1487882656.png)
 
 ***Activity SEND MAIL**
-![Screenshot_1487844646.png](https://bitbucket.org/repo/rxEn9a/images/4121956146-Screenshot_1487844646.png)
+
+![Screenshot_1487882687.png](https://bitbucket.org/repo/rxEn9a/images/1428775964-Screenshot_1487882687.png)
